@@ -15,7 +15,7 @@ TagManager:
   - 
   - Obstacle
   - Wolf
-  - 
+  - SheepDog
   - 
   - 
   - 
@@ -38,9 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: background
     uniqueID: 1593107785
+    locked: 0
+  - name: StartArea
+    uniqueID: 1742782411
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
