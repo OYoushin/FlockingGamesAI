@@ -30,4 +30,13 @@ public class FlockAgent : MonoBehaviour
         transform.position += (Vector3)velocity * Time.deltaTime;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            transform.up = collision.relativeVelocity;
+            transform.position += (Vector3)collision.relativeVelocity * Time.deltaTime;
+        }
+    }
 }
