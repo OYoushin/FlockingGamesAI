@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System.Diagnostics;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -127,6 +128,10 @@ public class EnemyAI : MonoBehaviour
 
     //    return suitableTarget;
     //}
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    { }
+  
 
 }
 

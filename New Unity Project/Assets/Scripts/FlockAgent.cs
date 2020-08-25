@@ -38,5 +38,9 @@ public class FlockAgent : MonoBehaviour
             transform.up = collision.relativeVelocity;
             transform.position += (Vector3)collision.relativeVelocity * Time.deltaTime;
         }
+        if (collision.gameObject.CompareTag("Wolf"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
