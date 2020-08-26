@@ -53,32 +53,39 @@ public class Flock : MonoBehaviour
     {
         foreach(FlockAgent agent in agents)
         {
-            List<Transform> context = GetNearbyObjects(agent);
-
-            //For testing
-            //agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
-
-            Vector2 move = behaviour.CalculateMove(agent, context, this);
-            move *= driveFactor;
-            if (move.sqrMagnitude > squareMaxSpeed)
+            if (agent.IsAlive() != false)
             {
-                move = move.normalized * maxSpeed;
+                List<Transform> context = GetNearbyObjects(agent);
+
+                //For testing
+                //agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
+
+                Vector2 move = behaviour.CalculateMove(agent, context, this);
+                move *= driveFactor;
+                if (move.sqrMagnitude > squareMaxSpeed)
+                {
+                    move = move.normalized * maxSpeed;
+                }
+                agent.Move(move);
             }
-            agent.Move(move);
         }
     }
 
     List<Transform> GetNearbyObjects(FlockAgent agent)
     {
         List<Transform> context = new List<Transform>();
-        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighbourRadius);
-        foreach(Collider2D c in contextColliders)
+        if(agent.IsAlive() != false)
         {
-            if(c != agent.AgentCollider)
+            Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighbourRadius);
+            foreach (Collider2D c in contextColliders)
             {
-                context.Add(c.transform);
+                if (c != agent.AgentCollider)
+                {
+                    context.Add(c.transform);
+                }
             }
+            return context;
         }
-        return context;
+        return null;
     }
 }

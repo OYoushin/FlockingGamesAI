@@ -18,7 +18,8 @@ public class EnemyAI : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
-
+    bool attack = false;
+    private float fallTime;
     Seeker seeker;
     Rigidbody2D rb;
     Rigidbody2D rbSheepdog;
@@ -54,7 +55,7 @@ public class EnemyAI : MonoBehaviour
         if(path == null)
             return;
 
-        if(currentWaypoint >= path.vectorPath.Count)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
@@ -129,9 +130,7 @@ public class EnemyAI : MonoBehaviour
     //    return suitableTarget;
     //}
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    { }
-  
+    
 
 }
 

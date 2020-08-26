@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7994926206836613415}
   m_Layer: 0
   m_Name: FlockAgent Orange
-  m_TagString: Untagged
+  m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

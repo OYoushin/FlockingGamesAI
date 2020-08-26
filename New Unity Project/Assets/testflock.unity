@@ -1555,7 +1555,7 @@ MonoBehaviour:
   agentPrefab: {fileID: -5362099120872278755, guid: a2993fbb252fbe843a0ee1d9548b6747,
     type: 3}
   behaviour: {fileID: 11400000, guid: 0a2d748990e3f7446b03b82ae11bb642, type: 2}
-  startingCount: 20
+  startingCount: 36
   driveFactor: 10
   maxSpeed: 5
   neighbourRadius: 1.5
@@ -1608,7 +1608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1512687302}
-  speed: 600
+  speed: 750
   nextWayepointDistance: 0.5
   wolfGFX: {fileID: 402835876}
   sheepdog: {fileID: 434396054}

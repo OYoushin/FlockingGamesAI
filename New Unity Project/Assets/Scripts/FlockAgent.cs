@@ -6,7 +6,7 @@ public class FlockAgent : MonoBehaviour
 {
     Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock;  } }
-
+    private bool alive = true;
     Collider2D agentCollider;
 
     public Collider2D AgentCollider { get { return agentCollider; } }
@@ -23,6 +23,10 @@ public class FlockAgent : MonoBehaviour
         agentFlock = flock;
     }
 
+    public bool IsAlive()
+    {
+        return alive;
+    }
 
     public void Move(Vector2 velocity)
     {
@@ -40,6 +44,7 @@ public class FlockAgent : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Wolf"))
         {
+            alive = false;
             Destroy(gameObject);
         }
     }
