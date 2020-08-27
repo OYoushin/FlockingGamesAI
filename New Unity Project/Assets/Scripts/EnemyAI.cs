@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using System.Diagnostics;
+using System.Threading;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -20,9 +21,14 @@ public class EnemyAI : MonoBehaviour
     bool reachedEndOfPath = false;
     bool attack = false;
     private float fallTime;
+
+
+    bool catched = false;
+
     Seeker seeker;
     Rigidbody2D rb;
     Rigidbody2D rbSheepdog;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -92,7 +98,7 @@ public class EnemyAI : MonoBehaviour
         //    //rb.AddForce(force);
         //}
 
-            if (rb.velocity.x >= 0.01f)
+        if (rb.velocity.x >= 0.01f)
         {
             wolfGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -101,7 +107,11 @@ public class EnemyAI : MonoBehaviour
             wolfGFX.localScale = new Vector3(1f, 1f, 1f);
         }
 
+
+
+
     }
+
 
 
     Transform GetClosestEnemy(Transform enemies)
@@ -130,7 +140,20 @@ public class EnemyAI : MonoBehaviour
     //    return suitableTarget;
     //}
 
-    
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Sheep"))
+        {
+            catched = true;
+        }
+    }
+    //void Wait() 
+    //{
+    //    timer = Time.time;
+    //    rb.velocity = Vector3.zero;
+    //    UnityEngine.Debug.Log("Catched a sheep!");
+    //}
 }
 

@@ -67,6 +67,14 @@ public class Flock : MonoBehaviour
                     move = move.normalized * maxSpeed;
                 }
                 agent.Move(move);
+
+                if (Vector2.Distance(agent.rbSheepDog.position, agent.rbSheep.position) < 2f) 
+                {
+                    Vector2 direction = (agent.rbSheep.position - agent.rbSheepDog.position).normalized;
+                    Vector2 moveAvoidSheepDog = direction * maxSpeed;
+                    agent.Move(moveAvoidSheepDog);
+                }
+
             }
         }
     }

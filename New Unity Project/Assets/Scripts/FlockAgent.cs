@@ -9,6 +9,11 @@ public class FlockAgent : MonoBehaviour
     private bool alive = true;
     Collider2D agentCollider;
 
+    public GameObject sheepDog;
+    public Rigidbody2D rbSheepDog;
+    public Rigidbody2D rbSheep;
+
+
     public Collider2D AgentCollider { get { return agentCollider; } }
 
 
@@ -16,6 +21,9 @@ public class FlockAgent : MonoBehaviour
     void Start()
     {
         agentCollider = GetComponent<Collider2D>();
+        sheepDog = GameObject.Find("SheepDog");
+        rbSheepDog = sheepDog.GetComponent<Rigidbody2D>();
+        rbSheep = GetComponent<Rigidbody2D>();
     }
 
     public void Initialize(Flock flock)
@@ -37,11 +45,12 @@ public class FlockAgent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            transform.up = collision.relativeVelocity;
-            transform.position += (Vector3)collision.relativeVelocity * Time.deltaTime;
-        }
+        //if (collision.gameObject.CompareTag("Player"))
+        //{
+
+        //    transform.up = collision.relativeVelocity;
+        //    transform.position += (Vector3)collision.relativeVelocity * Time.deltaTime;
+        //}
         if (collision.gameObject.CompareTag("Wolf"))
         {
             alive = false;
