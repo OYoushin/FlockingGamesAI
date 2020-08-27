@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efbf93f8a8dd65449cfff660a9e4873, type: 3}
+  m_Name: AvoidWolf
+  m_EditorClassIdentifier: 
+  filter: {fileID: 11400000, guid: 9dbf0a38197143a47a5e63e857dbef41, type: 2}
