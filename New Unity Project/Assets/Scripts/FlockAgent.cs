@@ -55,6 +55,13 @@ public class FlockAgent : MonoBehaviour
         {
             alive = false;
             Destroy(gameObject);
+            TextScript.sheepDead += 1;
+        }
+        if (collision.gameObject.CompareTag("SafeHouse"))
+        {
+            alive = false;
+            Destroy(gameObject);
+            TextScript.sheepSafe += 1;
         }
     }
 }
