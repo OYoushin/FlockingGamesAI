@@ -7,6 +7,7 @@ TagManager:
   - Wolf
   - Sheep
   - SafeHouse
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -16,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - Obstacle
+  - Sheepdog
   - Wolf
-  - SheepDog
-  - 
+  - Obstacle
+  - bg
   - 
   - 
   - 
