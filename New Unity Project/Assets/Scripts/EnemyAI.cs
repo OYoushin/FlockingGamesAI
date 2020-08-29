@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using Pathfinding;
-using System.Diagnostics;
-using System.Threading;
-
+#pragma warning disable CS0414
 public class EnemyAI : MonoBehaviour
 {
     public Transform target;
@@ -18,13 +15,14 @@ public class EnemyAI : MonoBehaviour
     public float rePathFindingRadius = 15f;
     Path path;
     int currentWaypoint = 0;
+#pragma warning disable CS0414
     bool reachedEndOfPath = false;
-    bool attack = false;
-    private float fallTime;
+    //bool attack = false;
+    //private float fallTime;
 
 
     bool catched = false;
-
+#pragma warning restore CS0414
     Seeker seeker;
     Rigidbody2D rb;
     Rigidbody2D rbSheepdog;

@@ -7,6 +7,7 @@ public class FlockAgent : MonoBehaviour
     Flock agentFlock;
     public Flock AgentFlock { get { return agentFlock;  } }
     private bool alive = true;
+    private bool obstacleHit = false;
     Collider2D agentCollider;
 
     public GameObject sheepDog;
@@ -36,6 +37,11 @@ public class FlockAgent : MonoBehaviour
         return alive;
     }
 
+    public bool IsObstacleHit()
+    {
+        return obstacleHit;
+    }
+
     public void Move(Vector2 velocity)
     {
         transform.up = velocity;
@@ -63,6 +69,11 @@ public class FlockAgent : MonoBehaviour
             Destroy(gameObject);
             TextScript.sheepSafe += 1;
         }
-        
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            obstacleHit = true;
+            transform.up = -collision.relativeVelocity;
+            transform.position += (Vector3)collision.relativeVelocity * Time.deltaTime;
+        }
     }
 }

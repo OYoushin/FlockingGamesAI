@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Stay In Radius
   m_EditorClassIdentifier: 
   center: {x: -10, y: -5}
-  radius: 15
+  radius: 20
