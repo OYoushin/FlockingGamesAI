@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 75499891}
   - component: {fileID: 75499890}
   - component: {fileID: 75499888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SafeHouse
   m_TagString: SafeHouse
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3138604, y: 4.011395}
+  m_Size: {x: 5.5, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &75499890
 SpriteRenderer:
