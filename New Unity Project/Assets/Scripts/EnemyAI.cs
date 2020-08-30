@@ -4,6 +4,7 @@ using Pathfinding;
 #pragma warning disable CS0414
 public class EnemyAI : MonoBehaviour
 {
+    public GameManager gameManager;
     public Transform target;
     public float speed = 200f;
     public float nextWayepointDistance = 3f;
@@ -38,7 +39,11 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if(seeker.IsDone())
+        if(GetClosestEnemy(target) == null)
+        {
+            gameManager.EndGame();
+        }
+        if(seeker.IsDone() && GetClosestEnemy(target) != null)
         {
             seeker.StartPath(rb.position, GetClosestEnemy(target).position, OnPathComplete);
         }
